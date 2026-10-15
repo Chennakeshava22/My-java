@@ -9,6 +9,6 @@ RUN mvn clean install -DskipTests
 
 
 FROM tomcat:8.0.20-jre8
-RUN rm -rf .use/local/tomcat/webapps/*
+RUN rm -rf /usr/local/tomcat/webapps/*
 COPY ./tomcat-users.xml /usr/local/tomcat/conf/
 COPY --from=builder /java/target/*.war /usr/local/tomcat/webapps/
