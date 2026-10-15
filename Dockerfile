@@ -11,4 +11,4 @@ RUN mvn clean package -DskipTests
 FROM tomcat:9.0.123-jdk17-temurin-noble
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY ./tomcat-users.xml /usr/local/tomcat/conf/
-COPY --from=builder /java/target/*.war /usr/local/tomcat/webapps/
+COPY --from=builder /java/target/*.war /usr/local/tomcat/webapps/ROOT.war
